@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Productos</title>
+
+    <style>
+         /*CSS DE INDEXUSU.HTML*/
+         #cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: calc(25% - 20px); /* Calculamos el ancho para 4 tarjetas en una fila */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.card h2 {
+    font-weight: bold;
+    text-align: center; /* Centrar el nombre del celular */
+}
+
+.card p {
+    text-align: center; /* Centrar los detalles del celular */
+}
+
+.card button {
+    width: 100%; /* Ancho completo para los botones */
+    margin-top: 10px; /* Espaciado entre los botones */
+}
+
+.card button:first-child {
+    margin-bottom: 10px; /* Espaciado debajo del botón editar */
+}
+    </style>
+
+ 
+</head>
+<body>
+    <header id="main-border" class="bg-warning text-white p-4 mb-4">
+        <div class="container">
+            <div class="indexNav row">
+                <div class="col-md-6">
+                    <h1 id="header-title"><strong>Productos</strong></h1>
+                    <button class="btn btn-success mt-2" onclick="window.location.href = '../index.html';" id="btnListEmployed">Lista de empleados</button>
+                </div>
+                <div class="col-md-3 ">
+                    <img class="btn btn-sm logout float-end" src="/img/logout_FILL0_wght700_GRAD200_opsz24.svg" width="55" alt=""> 
+                </div>
+                
+            </div>            
+        </div>
+    </header>
+    <h1 class="card-body text-center mb-4"><em>Productos</em></h1>
+    <div>
+        <div class=" text-center form-control">
+            <form id="formAgregar" class="formCel form-inline mb-3 col-md-4">
+                <label for="nombreCel" class="mt-3">Nombre del Celular:</label>
+                <input type="text" id="nombreCel" class="form-control mr-2 mt-3" placeholder="Nombre del celular" required>
+                <label for="caractCel" class="mt-3">Características del Celular:</label>
+                <textarea id="caractCel" class="form-control mr-2 mt-3" placeholder="Ingrese las caracteristicas del celular" required></textarea>
+                <label for="precCel" class="mt-3">Precio del Celular:</label>
+                <input type="number" id="precCel" class="form-control mr-2 mt-3" placeholder="Ingrese el precio del celular $0" required>
+                <button type="submit" class="btn btn-success mt-3">Agregar Celular</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Contenedor para mostrar las cards de celulares -->
+        <div >
+            <div id="cardsContainer"></div>
+        </div>
+
+    <script src="produc.js"></script>
+</body>
+</html>
